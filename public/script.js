@@ -13,16 +13,15 @@ async function windowActions(){
     function displayHall(json){
         let cols = Object.keys(json[0]);
 
-        let headers = cols.map( (col) =>{
+        let headers = cols.map( col =>{
             `<th> ${col}</th>`).join("");
 
             let rows = json
             .map(row => {
               let tds = cols.map(col => `<td>${row[col]}</td>`).join("");
               return `<tr>${tds}</tr>`;
-            })
-            .join("");
-        }
+            }).join("");
+        
         row = document.querySelector('tbody')
         row.innerHTML = displayHall(halls);
 
