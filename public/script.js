@@ -10,11 +10,10 @@ async function windowActions(){
     const request = await fetch(endpoint)
     const data = await request.json()
 
-    console.log(data)
+    //console.log(data)
     
-    function displayHalls(event){
         
-        const html = response.map(item =>{
+        const html = data.map(item =>{
             return `
                 <tr>
                     <span class="id">${item.id}</span></br>
@@ -28,7 +27,9 @@ async function windowActions(){
             `;
         }).join('');
         rows.innerHTML = html;
+        console.log(item.name)
+
     }
     const rows = document.querySelector('tbody')
-    }
+    
 window.onload = windowActions;
