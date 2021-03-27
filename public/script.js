@@ -10,18 +10,20 @@ async function windowActions(){
     const request = await fetch(endpoint);
     const halls = await request.json();
     console.log(halls)
-    const html =  halls.forEach(item => {
-        
-        console.log("here is ${item}:" ,item);
-        return `
-                <tr>
-                    <span class="name"></span></br>
-                 </tr>   
-            `;
-        }).join('');
-        rows.innerHTML = html;
+    function displayHall(json){
+        let cols = Object.keys(json[0]);
 
-    }
-    const rows = document.querySelector('tbody')
-    
+        let headers = cols.map( (col) =>{
+            `<th> ${col}</th>`).join("");
+
+            let rows = json
+            .map(row => {
+              let tds = cols.map(col => `<td>${row[col]}</td>`).join("");
+              return `<tr>${tds}</tr>`;
+            })
+            .join("");
+        }
+        row = document.querySelector('tbody')
+        row.innerHTML = displayHall(halls);
+
 window.onload = windowActions;
