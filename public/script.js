@@ -13,7 +13,7 @@ async function windowActions(){
     //console.log(data)
     
         
-        const html = data.map(item =>{
+        const html = data.value.filter(item =>{
             return `
                 <tr>
                     <span class="id">${item.id}</span></br>
