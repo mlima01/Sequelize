@@ -8,21 +8,28 @@
 async function windowActions(){
     const endpoint = '/api/dining';
     const request = await fetch(endpoint);
-    const halls = await request.json();
-    console.log(halls)
-    function displayHall(json){
-        let cols = Object.keys(json[0]);
+    const data = await request.json();
+    
 
-        let headers = cols.map( col =>{
-            `<th> ${col}</th>`).join("");
+    for (item in data) {
+        dataArr = data[item];
+        //console.log(dataArr)
+        for (i in dataArr){
+            
+            row.innerHTML +=
+                    `<tr>
+                    <th>${dataArr[i].hall_id}</th>
+                    <th>${dataArr[i].hall_name}</th>
+                    <th>${dataArr[i].hall_address}</th>
+                    </tr>`};
+            
 
-            let rows = json
-            .map(row => {
-              let tds = cols.map(col => `<td>${row[col]}</td>`).join("");
-              return `<tr>${tds}</tr>`;
-            }).join("");
+        }}
         
-        row = document.querySelector('tbody')
-        row.innerHTML = displayHall(halls);
-
+    
+     
+    
+        
+    const row = document.querySelector("tbody")
+    
 window.onload = windowActions;
