@@ -6,28 +6,20 @@
 //exists in the new repository.
 
 async function windowActions(){
-    const endpoint = '/api/dining'
-    const request = await fetch(endpoint)
-    const data = await request.json()
-
-    //console.log(data)
-    
+    const endpoint = '/api/dining';
+    const request = await fetch(endpoint);
+    const halls = await request.json();
+    console.log(typeof(halls))
+    const html =  halls.forEach(item => {
         
-        const html = data.value.filter(item =>{
-            return `
+        console.log("here is ${item}:" ,item);
+        return `
                 <tr>
-                    <span class="id">${item.id}</span></br>
-                </tr>
-                <tr>
-                    <span class="name">${item.hall_name}</span></br>
-                </tr>
-                <tr>
-                <span class="address">${item.hall_address}</span></br>
-                </tr>
+                    <span class="name"></span></br>
+                 </tr>   
             `;
         }).join('');
         rows.innerHTML = html;
-        console.log(item.name)
 
     }
     const rows = document.querySelector('tbody')
