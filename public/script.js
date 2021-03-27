@@ -6,6 +6,11 @@
 //exists in the new repository.
 
 async function windowActions(){
-    const endpoint
-}
+    const endpoint = '/api/dining'
+    const request = await fetch(endpoint)
+    const data = await request.json()
+
+    console.log(data)
+         
+    }
 window.onload = windowActions;
