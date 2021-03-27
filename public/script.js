@@ -9,7 +9,7 @@ async function windowActions(){
     const endpoint = '/api/dining';
     const request = await fetch(endpoint);
     const halls = await request.json();
-    console.log(typeof(halls))
+    console.log(halls)
     const html =  halls.forEach(item => {
         
         console.log("here is ${item}:" ,item);
