@@ -4,7 +4,7 @@
 }
 .bottom{
     display: block;
-    position: absolute;
+    position: relative;
 
 }
 #chartContainer{
