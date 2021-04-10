@@ -1,18 +1,16 @@
-.top{
-    display: block;
-    position: relative;
-}
-.bottom{
-    display: block;
-    position: relative;
-
-}
 #chartContainer{
+    display: block;
     position: relative;
 }
-.table-container{
-    position: absolute;
-    display: block;
+.canvasjs-chart-canvas{
+    position: initial;
 }
-
-
+.canvasjs-chart-toolbar{
+    position: relative;
+}
+.canvasjs-chart-credit{
+    position: relative;
+}
+.table{
+    position: relative;
+}
