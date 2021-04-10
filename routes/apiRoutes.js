@@ -94,8 +94,8 @@ router.route('/wholeMeals')
       const macros = await db.Macros.findAll();
       const wholeMeals = meals.map((meal) => {
         const macroEntry = macros.find((macro) => macro.meal_id === meal.meal_id);
-        console.log('meal', meal.dataValues)
-        console.log('macros', macroEntry.dataValues)
+        // console.log('meal', meal.dataValues)
+        // console.log('macros', macroEntry.dataValues)
         
         return {
           ...meal.dataValues,
