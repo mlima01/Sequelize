@@ -1,9 +1,10 @@
+#chartContainer{
+    display: block;
+    position: inherit;
+}
 .table-container{
     position: absolute;
     display: block;
 }
 
-#chartContainer{
-    display: block;
-    position: relative;
-}
+
