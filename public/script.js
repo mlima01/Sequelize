@@ -90,7 +90,7 @@ async function windowActions(){
                 </tr>`};
             
 
-        
+    createChart();   
     }
 
         
