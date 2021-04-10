@@ -1,5 +1,5 @@
 async function getMeals(){
-    const endpoint = '/api/meals';
+    const endpoint = '/api/wholeMeals';
     const request = await fetch(endpoint);
     const meal_data = await request.json();
     return meal_data
