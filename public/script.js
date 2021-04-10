@@ -52,6 +52,6 @@ async function windowActions(){
      
     
         
-    const row = document.querySelector("table")
+    const row = document.querySelector("tbody")
     
 window.onload = windowActions;
