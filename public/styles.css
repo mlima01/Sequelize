@@ -1,3 +1,12 @@
+.top{
+    display: block;
+    position: relative;
+}
+.bottom{
+    display: block;
+    position: absolute;
+
+}
 #chartContainer{
     position: relative;
 }
