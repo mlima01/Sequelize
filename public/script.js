@@ -8,7 +8,6 @@ async function getMeals(){
 
 
 async function windowActions(){
-    console.log("loaded window")
     const meals = await getMeals();
     console.table(meals);
 
