@@ -12,20 +12,20 @@ async function windowActions(){
     console.table(meals.data);
 
 
-    // for (item in data) {
-    //     dataArr = data[item];
-    //     console.log(dataArr)
-    //     for (i in dataArr){
+    for (item in data) {
+        dataArr = data[item];
+        console.log(dataArr)
+        for (i in dataArr){
             
-    //         row.innerHTML +=
-    //                 `<tr>
-    //                 <th>${dataArr[i].meal_id}</th>
-    //                 <th>${dataArr[i].meal_name}</th>
-    //                 <th>${dataArr[i].meal_category}</th>
-    //                 </tr>`};
+            row.innerHTML +=
+                    `<tr>
+                    <th>${dataArr[i].meal_id}</th>
+                    <th>${dataArr[i].meal_name}</th>
+                    <th>${dataArr[i].meal_category}</th>
+                    </tr>`};
             
 
-    //     }}
+        }}
 }
         
     
