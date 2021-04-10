@@ -12,51 +12,105 @@ async function getMeals(){
     return meal_data
 }
 
-function createChart() {
-	
-    var chart = new CanvasJS.Chart("chartContainer", {
+function createChart(arr) {
+	console.log(arr[0])
+    const chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
-        title: {
-            text: "Military Expenditure of Countries: 2016"
+        title:{
+            text: "Meals and Macros"
         },
-        axisX: {
-            interval: 1
+        axisX:{
+            labelAutoFit: true
         },
-        axisY: {
-            title: "Expenses in Billion Dollars",
-            includeZero: true,
-            scaleBreaks: {
-                type: "wavy",
-                customBreaks: [{
-                    startValue: 80,
-                    endValue: 210
-                    },
-                    {
-                        startValue: 230,
-                        endValue: 600
-                    }
-            ]}
+        toolTip: {
+            shared: true
+        },
+        legend:{
+            cursor: "pointer",
+            itemclick: toggleDataSeries
         },
         data: [{
-            type: "bar",
-            toolTipContent: "<img src=\"https://canvasjs.com/wp-content/uploads/images/gallery/javascript-column-bar-charts/\"{url}\"\" style=\"width:40px; height:20px;\"> <b>{label}</b><br>Budget: ${y}bn<br>{gdp}% of GDP",
+            type: "stackedBar",
+            name: "Protein",
+            showInLegend: "true",
             dataPoints: [
-                { label: "Israel", y: 17.8, gdp: 5.8, url: "israel.png" },
-                { label: "United Arab Emirates", y: 22.8, gdp: 5.7, url: "uae.png" },
-                { label: "Brazil", y: 22.8, gdp: 1.3, url: "brazil.png"},
-                { label: "Australia", y: 24.3, gdp: 2.0, url: "australia.png" },
-                { label: "South Korea", y: 36.8, gdp: 2.7, url: "skorea.png" },
-                { label: "Germany", y: 41.1, gdp: 1.2, url: "germany.png" },
-                { label: "Japan", y: 46.1, gdp: 1.0, url: "japan.png" },
-                { label: "United Kingdom", y: 48.3, gdp: 1.9, url: "uk.png" },
-                { label: "India", y: 55.9, gdp: 2.5, url: "india.png" },
-                { label: "Russia", y: 69.2, gdp: 5.3, url: "russia.png" },
-                { label: "China", y: 215.7, gdp: 1.9, url: "china.png" },
-                { label: "United States", y: 611.2, gdp: 3.3, url: "us.png" }
+                { label: arr[0].meal_name, y: arr[0].protein },
+                { label: arr[1].meal_name, y: arr[1].protein },
+                { label: arr[2].meal_name, y: arr[2].protein },
+                { label: arr[3].meal_name, y: arr[3].protein },
+                { label: arr[4].meal_name, y: arr[4].protein },
+                { label: arr[5].meal_name, y: arr[5].protein },
+                { label: arr[6].meal_name, y: arr[6].protein }
+            ]
+        },
+        {
+            type: "stackedBar",
+            name: "Fat",
+            showInLegend: "true",
+            dataPoints: [
+                { label: arr[0].meal_name, y: arr[0].fat },
+                { label: arr[1].meal_name, y: arr[1].fat },
+                { label: arr[2].meal_name, y: arr[2].fat },
+                { label: arr[3].meal_name, y: arr[3].fat },
+                { label: arr[4].meal_name, y: arr[4].fat },
+                { label: arr[5].meal_name, y: arr[5].fat },
+                { label: arr[6].meal_name, y: arr[6].fat }
+            ]
+        },
+        {
+            type: "stackedBar",
+            name: "Carbs",
+            showInLegend: "true",
+            dataPoints: [
+                { label: arr[0].meal_name, y: arr[0].carbs },
+                { label: arr[1].meal_name, y: arr[1].carbs },
+                { label: arr[2].meal_name, y: arr[2].carbs },
+                { label: arr[3].meal_name, y: arr[3].carbs },
+                { label: arr[4].meal_name, y: arr[4].carbs },
+                { label: arr[5].meal_name, y: arr[5].carbs },
+                { label: arr[6].meal_name, y: arr[6].carbs }
+            ]
+        },
+        {
+            type: "stackedBar",
+            name: "Cholesterol",
+            showInLegend: "true",
+            dataPoints: [
+                { label: arr[0].meal_name, y: arr[0].cholesterol },
+                { label: arr[1].meal_name, y: arr[1].cholesterol },
+                { label: arr[2].meal_name, y: arr[2].cholesterol },
+                { label: arr[3].meal_name, y: arr[3].cholesterol },
+                { label: arr[4].meal_name, y: arr[4].cholesterol },
+                { label: arr[5].meal_name, y: arr[5].cholesterol },
+                { label: arr[6].meal_name, y: arr[6].cholesterol }
+            ]
+        },
+        {
+            type: "stackedBar",
+            name: "Sodium",
+            showInLegend: "true",
+            dataPoints: [
+                { label: arr[0].meal_name, y: arr[0].sodium },
+                { label: arr[1].meal_name, y: arr[1].sodium },
+                { label: arr[2].meal_name, y: arr[2].sodium },
+                { label: arr[3].meal_name, y: arr[3].sodium },
+                { label: arr[4].meal_name, y: arr[4].sodium },
+                { label: arr[5].meal_name, y: arr[5].sodium },
+                { label: arr[6].meal_name, y: arr[6].sodium }
             ]
         }]
     });
     chart.render();
+    
+    function toggleDataSeries(e) {
+        if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        }
+        else {
+            e.dataSeries.visible = true;
+        }
+        chart.render();
+    }
     
     }
 
@@ -71,8 +125,8 @@ async function windowActions(){
         return meals[random];
     })
    
-    console.log(selected)
-    createChart(); 
+    //console.log(selected)
+    createChart(selected); 
     for (item in selected) {
         dataArr = selected[item];
         
