@@ -1,8 +1,7 @@
 #table-container{
     text-align: inherit;
-    display:flex;
+    position: absolute;
 }
 #chartContainer{
-    display: flexbox;
     position: inherit;
 }
