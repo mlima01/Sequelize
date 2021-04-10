@@ -1,4 +1,9 @@
 .table-container{
-    text-align: inherit;
     position: absolute;
+    display: block;
+}
+
+#chartContainer{
+    display: block;
+    position: relative;
 }
