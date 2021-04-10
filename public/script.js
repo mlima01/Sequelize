@@ -9,7 +9,7 @@ async function getMeals(){
 
 async function windowActions(){
     const meals = await getMeals();
-    console.table(meals);
+    console.table(meals.data);
 
 
     // for (item in data) {
