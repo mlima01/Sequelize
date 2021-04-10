@@ -1,6 +1,5 @@
 #chartContainer{
-    display: block;
-    position: inherit;
+    position: relative;
 }
 .table-container{
     position: absolute;
