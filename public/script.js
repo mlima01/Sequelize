@@ -31,16 +31,16 @@ async function windowActions(){
         
         row.innerHTML +=
                 `<tr>
-                <th>${dataArr.meal_id}</th>
-                <th>${dataArr.meal_name}</th>
-                <th>${dataArr.meal_category}</th>
-                <th>${dataArr.calories}</th>
-                <th>${dataArr.serving_size}</th>
-                <th>${dataArr.cholesterol}</th>
-                <th>${dataArr.sodium}</th>
-                <th>${dataArr.carbs}</th>
-                <th>${dataArr.protein}</th>
-                <th>${dataArr.fat}</th>
+                <td>${dataArr.meal_id}</td>
+                <td>${dataArr.meal_name}</td>
+                <td>${dataArr.meal_category}</td>
+                <td>${dataArr.calories}</td>
+                <td>${dataArr.serving_size}</td>
+                <td>${dataArr.cholesterol}</td>
+                <td>${dataArr.sodium}</td>
+                <td>${dataArr.carbs}</td>
+                <td>${dataArr.protein}</td>
+                <td>${dataArr.fat}</td>
                 </tr>`};
             
 
@@ -52,6 +52,6 @@ async function windowActions(){
      
     
         
-    const row = document.querySelector("tbody")
+    const row = document.querySelector("table")
     
 window.onload = windowActions;
