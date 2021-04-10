@@ -12,26 +12,32 @@ async function windowActions(){
     console.table(meals.data);
 
 
-    for (item in data) {
-        dataArr = data[item];
-        console.log(dataArr)
-        for (i in dataArr){
-            
-            row.innerHTML +=
-                    `<tr>
-                    <th>${dataArr[i].meal_id}</th>
-                    <th>${dataArr[i].meal_name}</th>
-                    <th>${dataArr[i].meal_category}</th>
-                    </tr>`};
+    for (item in meals.data) {
+        dataArr = meals.data[item];
+        
+        row.innerHTML +=
+                `<tr>
+                <th>${dataArr.meal_id}</th>
+                <th>${dataArr.meal_name}</th>
+                <th>${dataArr.meal_category}</th>
+                <th>${dataArr.calories}</th>
+                <th>${dataArr.serving_size}</th>
+                <th>${dataArr.cholesterol}</th>
+                <th>${dataArr.sodium}</th>
+                <th>${dataArr.carbs}</th>
+                <th>${dataArr.protein}</th>
+                <th>${dataArr.fat}</th>
+                </tr>`};
             
 
-        }}
-}
+        
+    }
+
         
     
      
     
         
-    //const row = document.querySelector("tbody")
+    const row = document.querySelector("tbody")
     
 window.onload = windowActions;
