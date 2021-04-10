@@ -17,6 +17,11 @@ async function getMeals(){
 async function windowActions(){
     const meals = await getMeals();
     console.table(meals.data);
+    const mealArray = [1,2,3,4,5,6,7,8,9,10,];
+    const selected = mealArray.map(element => {
+        const random = getRandomIntInclusive(0, meals.length - 1);
+        return meals[random];
+    })
 
 
     for (item in meals.data) {
