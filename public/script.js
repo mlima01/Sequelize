@@ -13,7 +13,7 @@ async function getMeals(){
 }
 
 function createChart(arr) {
-	console.log(arr[0])
+	//console.log(arr[0])
     const chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         title:{
