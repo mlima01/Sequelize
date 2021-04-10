@@ -72,6 +72,7 @@ async function windowActions(){
     })
    
     console.log(selected)
+    createChart(); 
     for (item in selected) {
         dataArr = selected[item];
         
@@ -90,7 +91,7 @@ async function windowActions(){
                 </tr>`};
             
 
-    createChart();   
+      
     }
 
         
