@@ -1,7 +1,4 @@
-#chartContainer{
-    display: block;
-    position: relative;
-}
+
 .canvasjs-chart-canvas{
     position: initial;
 }
@@ -9,8 +6,5 @@
     position: relative;
 }
 .canvasjs-chart-credit{
-    position: relative;
-}
-.table{
     position: relative;
 }
